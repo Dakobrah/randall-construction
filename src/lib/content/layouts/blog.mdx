@@ -1,0 +1,18 @@
+<script>
+  export let metadata = {};
+</script>
+
+<article class="prose lg:prose-lg max-w-3xl mx-auto py-12">
+  <header>
+    <p class="text-sm text-primary-600">Blog</p>
+    <h1>{metadata.title}</h1>
+    {#if metadata.date}
+      <time datetime={metadata.date} class="text-sm text-dark-500">{metadata.date}</time>
+    {/if}
+    {#if metadata.description}
+      <p class="lead">{metadata.description}</p>
+    {/if}
+  </header>
+
+  <slot />
+</article>
