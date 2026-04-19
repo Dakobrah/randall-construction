@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://www.randellconstruction.com/sitemap.xml
+# Crawl-delay can be added if necessary
