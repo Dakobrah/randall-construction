@@ -1,5 +1,5 @@
 #!/bin/bash
 # Deployment script for Cloudflare Pages
-# The actual deployment is handled by the SvelteKit adapter-cloudflare
-echo "Deployment complete"
-exit 0
+# Deploy using wrangler pages
+npm install -g wrangler
+wrangler pages deploy .svelte-kit/output/client --project-name=randall-construction

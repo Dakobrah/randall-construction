@@ -1,0 +1,9 @@
+name = "randall-construction"
+compatibility_date = "2024-09-23"
+
+[env.production]
+name = "randall-construction"
+routes = [
+  { pattern = "randallexcavation.com", zone_name = "randallexcavation.com" },
+  { pattern = "*.randallexcavation.com", zone_name = "randallexcavation.com" }
+]
