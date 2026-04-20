@@ -1,7 +1,8 @@
 import { writable } from 'svelte/store';
 
+
 function createThemeStore() {
-  const { subscribe, set } = writable<'light' | 'dark'>('light');
+  const { subscribe, set, update } = writable<'light' | 'dark'>('light');
 
   // Initialize from localStorage or system preference
   const initTheme = () => {
@@ -20,7 +21,7 @@ function createThemeStore() {
   return {
     subscribe,
     toggle: () => {
-      set((prev) => {
+      update((prev) => {
         const next = prev === 'light' ? 'dark' : 'light';
         if (typeof window !== 'undefined') {
           localStorage.setItem('theme', next);

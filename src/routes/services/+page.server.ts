@@ -33,9 +33,9 @@ export const load = async () => {
   ];
 
   const seo = {
-    title: 'Our Services | Randell Construction - Excavation, Grading & Demolition',
+    title: 'Our Services | Randall Excavation - Excavation, Grading & Demolition',
     description: 'Complete excavation, grading, demolition, and site development services for residential and commercial projects. Licensed, insured, 20+ years experience.',
-    canonical: 'https://www.randellconstruction.com/services'
+    canonical: 'https://www.randallexcavation.com/services'
   };
 
   return {

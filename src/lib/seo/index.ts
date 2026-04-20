@@ -1,4 +1,4 @@
-// SEO utilities for Randell Construction
+// SEO utilities for Randall Excavation
 
 export interface SeoMeta {
   title: string;
@@ -17,21 +17,21 @@ export interface JsonLdData {
 
 // Company info
 export const COMPANY = {
-  name: 'Randell Construction',
+  name: 'Randall Excavation',
   tagline: 'Excavation & Site Development Experts',
   phone: '(555) 123-4567',
-  email: 'info@randellconstruction.com',
+  email: 'info@randallexcavation.com',
   address: '123 Construction Way',
   city: 'Springfield',
   state: 'IL',
   zip: '62701',
   logo: '/logo.png',
-  url: 'https://www.randellconstruction.com'
+  url: 'https://www.randallexcavation.com'
 };
 
 // Default SEO for home page
 export const homeSeo: SeoMeta = {
-  title: 'Randell Construction | Excavation, Grading & Demolition Services',
+  title: 'Randall Excavation | Excavation, Grading & Demolition Services',
   description: 'Professional excavation, grading, and demolition services for residential and commercial projects. Licensed, insured, and trusted by developers. Get a free estimate today.',
   keywords: [
     'excavation contractor',
@@ -112,9 +112,9 @@ export function getLocalBusinessJsonLd(): JsonLdData[] {
       closes: '18:00'
     },
     sameAs: [
-      'https://www.facebook.com/randellconstruction',
-      'https://www.linkedin.com/company/randellconstruction',
-      'https://www.instagram.com/randellconstruction'
+      'https://www.facebook.com/randallexcavation',
+      'https://www.linkedin.com/company/randallexcavation',
+      'https://www.instagram.com/randallexcavation'
     ],
     hasCredential: [
       {

@@ -15,7 +15,7 @@
 </script>
 
 <svelte:head>
-  <title>{seo?.title ?? 'Our Services | Randell Construction'}</title>
+  <title>{seo?.title ?? 'Our Services | Randall Excavation'}</title>
   <meta name="description" content={seo?.description ?? ''} />
   {#if seo?.canonical}
     <link rel="canonical" href={seo.canonical} />

@@ -79,7 +79,7 @@
   <title>{homeSeo.title}</title>
   <meta name="description" content={homeSeo.description} />
   <meta name="keywords" content={homeSeo.keywords.join(', ')} />
-  <link rel="canonical" href="https://www.randellconstruction.com" />
+  <link rel="canonical" href="https://www.randallexcavation.com" />
 </svelte:head>
 
 <Hero
@@ -167,8 +167,8 @@
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
       {#each [
-        { name: 'Mike Thompson', role: 'Homebuilder', text: 'Randell Construction delivered our foundation on time and under budget. Their attention to detail and communication was outstanding.', rating: 5 },
-        { name: 'Sarah Chen', role: 'Commercial Developer', text: 'We have used Randell for multiple commercial projects. Their fleet, crew, and professionalism are unmatched in the region.', rating: 5 },
+        { name: 'Mike Thompson', role: 'Homebuilder', text: 'Randall Construction delivered our foundation on time and under budget. Their attention to detail and communication was outstanding.', rating: 5 },
+        { name: 'Sarah Chen', role: 'Commercial Developer', text: 'We have used Randall for multiple commercial projects. Their fleet, crew, and professionalism are unmatched in the region.', rating: 5 },
         { name: 'David Rodriguez', role: 'Property Manager', text: 'They handled our complex drainage issue with expertise. The team was professional, clean, and completed the work ahead of schedule.', rating: 5 }
       ] as testimonial}
         <div class="card p-6 md:p-8 animate-on-scroll">

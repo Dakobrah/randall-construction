@@ -42,7 +42,6 @@ export async function GET() {
     const modules = import.meta.glob('/src/lib/content/services/*.mdx', { eager: true }) as Record<string, any>;
     serviceSlugs = Object.values(modules).map((m: any) => (m.metadata || m.frontmatter || {}).slug).filter(Boolean);
   } catch (e) {
-    // fallback hardcoded
     serviceSlugs = ['residential-excavation', 'commercial-site-development', 'foundation-prep', 'grading-drainage', 'demolition-hauling', 'land-clearing'];
   }
 

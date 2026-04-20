@@ -1,10 +1,8 @@
 <script lang="ts">
-  import { FadeIn, SlideUp } from 'svelte/transition';
-
   export let title: string = '';
   export let description: string = '';
   export let icon: string = '🏗️';
-  export let image?: string = '';
+  export let image: string | undefined = '';
   export let link: string = '/services';
   export let linkText: string = 'Learn More';
   export let features: string[] = [];
@@ -20,12 +18,12 @@
   };
 </script>
 
-<SlideUp duration={500} transition={{ delay }}>
+<div class="animate-on-scroll h-full" style="animation-delay: {delay}ms">
   <a href={link}
     class="group card p-6 md:p-8 h-full flex flex-col hover:border-primary-500/50 transition-all duration-300"
     aria-label={`Learn more about ${title}`}>
     <!-- Icon/Image -->
-      {#if image}
+    {#if image}
       <div class="w-full h-48 mb-6 overflow-hidden rounded-lg">
         <img src={image} alt={title} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" width="400" height="192" />
       </div>
@@ -65,4 +63,4 @@
       </svg>
     </div>
   </a>
-</SlideUp>
+</div>

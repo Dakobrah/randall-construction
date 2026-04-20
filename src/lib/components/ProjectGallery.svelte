@@ -1,8 +1,5 @@
 <script lang="ts">
-  import { FadeIn, FlyIn } from 'svelte/transition';
-  import { createEventDispatcher } from 'svelte';
-
-  export let projects: Array<{
+  type Project = {
     id: string;
     title: string;
     category: 'residential' | 'commercial';
@@ -11,7 +8,9 @@
     location: string;
     description: string;
     specs?: { label: string; value: string }[];
-  }> = [
+  };
+
+  export let projects: Project[] = [
     {
       id: '1',
       title: 'Oak Creek Lot Development',
@@ -98,25 +97,21 @@
     }
   ];
 
-  const dispatch = createEventDispatcher();
   let activeFilter: 'all' | 'residential' | 'commercial' = 'all';
-  let selectedProject = $state(null);
+  let selectedProject: Project | null = null;
 
-  function handleFilter(filter: 'all' | 'residential' | 'commercial') {
-    activeFilter = filter;
-  }
-
-  function openProject(project) {
-    selectedProject = project;
-  }
-
-  function closeProject() {
-    selectedProject = null;
-  }
-
-  $: filteredProjects = activeFilter === 'all' 
-    ? projects 
+  $: filteredProjects = activeFilter === 'all'
+    ? projects
     : projects.filter(p => p.category === activeFilter);
+
+  const filters: { val: 'all' | 'residential' | 'commercial'; label: string }[] = [
+    { val: 'all', label: 'All Projects' },
+    { val: 'residential', label: 'Residential' },
+    { val: 'commercial', label: 'Commercial' }
+  ];
+
+  function openProject(project: Project) { selectedProject = project; }
+  function closeProject() { selectedProject = null; }
 </script>
 
 <section class="py-16 md:py-24 bg-white dark:bg-dark-900">
@@ -136,54 +131,30 @@
 
     <!-- Filters -->
     <div class="flex flex-wrap justify-center gap-3 mb-12">
-      <button 
-        class:px-6
-        class:py-3
-        class="rounded-full font-semibold transition-all"
-        class:bg-primary-500:text-white
-        class:bg-gray-100:dark:bg-dark-700:text-dark-600:dark:text-dark-300
-        class:hover:bg-primary-500:hover:text-white
-        on:click={() => handleFilter('all')}
-        class:ring-2={activeFilter === 'all'}
-        class:ring-primary-500={activeFilter === 'all'}>
-        All Projects
-      </button>
-      <button 
-        class:px-6
-        class:py-3
-        class="rounded-full font-semibold transition-all"
-        class:bg-primary-500:text-white
-        class:bg-gray-100:dark:bg-dark-700:text-dark-600:dark:text-dark-300
-        class:hover:bg-primary-500:hover:text-white
-        on:click={() => handleFilter('residential')}
-        class:ring-2={activeFilter === 'residential'}
-        class:ring-primary-500={activeFilter === 'residential'}>
-        Residential
-      </button>
-      <button 
-        class:px-6
-        class:py-3
-        class="rounded-full font-semibold transition-all"
-        class:bg-primary-500:text-white
-        class:bg-gray-100:dark:bg-dark-700:text-dark-600:dark:text-dark-300
-        class:hover:bg-primary-500:hover:text-white
-        on:click={() => handleFilter('commercial')}
-        class:ring-2={activeFilter === 'commercial'}
-        class:ring-primary-500={activeFilter === 'commercial'}>
-        Commercial
-      </button>
+      {#each filters as { val, label }}
+        <button
+          class="px-6 py-3 rounded-full font-semibold transition-all"
+          class:bg-primary-500={activeFilter === val}
+          class:text-white={activeFilter === val}
+          class:bg-gray-100={activeFilter !== val}
+          class:dark:bg-dark-700={activeFilter !== val}
+          class:text-dark-600={activeFilter !== val}
+          on:click={() => activeFilter = val}>
+          {label}
+        </button>
+      {/each}
     </div>
 
     <!-- Gallery Grid -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
       {#each filteredProjects as project (project.id)}
-        <div class="group card overflow-hidden cursor-pointer" 
+        <div class="group card overflow-hidden cursor-pointer animate-on-scroll"
              on:click={() => openProject(project)}
              tabindex="0"
              role="button"
              aria-label={`Open ${project.title} details`}
              on:keydown={(e) => {
-               if (e.key === 'Enter' || e.key === ' ' || e.key === 'Spacebar') { e.preventDefault(); openProject(project); }
+               if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openProject(project); }
              }}>
           <!-- Image -->
           <div class="relative h-56 overflow-hidden">
@@ -193,24 +164,19 @@
                  loading="lazy"
                  width="400"
                  height="224" />
-            <!-- Overlay -->
             <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            <!-- Category badge -->
             <div class="absolute top-4 left-4">
-              <span class="px-3 py-1 bg-primary-500 text-white text-xs font-semibold rounded-full">
+              <span class="px-3 py-1 bg-primary-500 text-white text-xs font-semibold rounded-full capitalize">
                 {project.category}
               </span>
             </div>
-            <!-- View button -->
             <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <span class="px-6 py-2 bg-white/90 text-dark-900 font-semibold rounded-full">
-                View Details
-              </span>
+              <span class="px-6 py-2 bg-white/90 text-dark-900 font-semibold rounded-full">View Details</span>
             </div>
           </div>
           <!-- Content -->
           <div class="p-6">
-            <div class="flex items-center gap-2 text-sm text-dark-400 dark:text-dark-400 mb-2">
+            <div class="flex items-center gap-2 text-sm text-dark-400 mb-2">
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
@@ -220,9 +186,7 @@
             <h3 class="text-lg font-heading font-bold text-dark-900 dark:text-white mb-2 group-hover:text-primary-500 transition-colors">
               {project.title}
             </h3>
-            <p class="text-dark-400 dark:text-dark-400 text-sm line-clamp-2">
-              {project.description}
-            </p>
+            <p class="text-dark-400 text-sm line-clamp-2">{project.description}</p>
             {#if project.specs}
               <div class="flex flex-wrap gap-3 mt-4 pt-4 border-t border-gray-100 dark:border-dark-700">
                 {#each project.specs.slice(0, 2) as spec}
@@ -237,14 +201,12 @@
       {/each}
     </div>
 
-    <!-- Empty state -->
     {#if filteredProjects.length === 0}
       <div class="text-center py-16">
-        <p class="text-dark-400 dark:text-dark-400 text-lg">No projects found in this category.</p>
+        <p class="text-dark-400 text-lg">No projects found in this category.</p>
       </div>
     {/if}
 
-    <!-- CTA -->
     <div class="text-center mt-12">
       <a href="/request-quote" class="btn-primary">
         Start Your Project
@@ -257,23 +219,31 @@
 
   <!-- Project Modal -->
   {#if selectedProject}
-    <div class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm" on:click={closeProject}>
-      <div class="bg-white dark:bg-dark-800 rounded-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto shadow-2xl" on:click|stopPropagation>
-        <!-- Image -->
+    <div class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm"
+         on:click={closeProject}
+         on:keydown={(e) => e.key === 'Escape' && closeProject()}
+         role="presentation"
+         tabindex="-1">
+      <div class="bg-white dark:bg-dark-800 rounded-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto shadow-2xl"
+           role="dialog"
+           aria-modal="true"
+           aria-label={selectedProject.title}
+           tabindex="0"
+           on:click|stopPropagation
+           on:keydown|stopPropagation>
         <div class="relative h-64 md:h-80">
           <img src={selectedProject.image} alt={selectedProject.title} class="w-full h-full object-cover" />
-    <button class="absolute top-4 right-4 w-10 h-10 bg-white/90 dark:bg-dark-800/90 rounded-full flex items-center justify-center hover:bg-white transition-colors"
-      on:click={closeProject}
-      aria-label="Close project dialog">
+          <button class="absolute top-4 right-4 w-10 h-10 bg-white/90 dark:bg-dark-800/90 rounded-full flex items-center justify-center hover:bg-white transition-colors"
+            on:click={closeProject}
+            aria-label="Close project dialog">
             <svg class="w-5 h-5 text-dark-600 dark:text-dark-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
             </svg>
           </button>
         </div>
-        <!-- Content -->
         <div class="p-6 md:p-8">
           <div class="flex flex-wrap gap-2 mb-4">
-            <span class="px-3 py-1 bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 text-xs font-semibold rounded-full">
+            <span class="px-3 py-1 bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 text-xs font-semibold rounded-full capitalize">
               {selectedProject.category}
             </span>
             {#if selectedProject.phase}
@@ -285,29 +255,25 @@
           <h3 class="text-2xl md:text-3xl font-heading font-bold text-dark-900 dark:text-white mb-2">
             {selectedProject.title}
           </h3>
-          <div class="flex items-center gap-2 text-dark-400 dark:text-dark-400 mb-6">
+          <div class="flex items-center gap-2 text-dark-400 mb-6">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
             </svg>
             {selectedProject.location}
           </div>
-          <p class="text-dark-500 dark:text-dark-400 mb-6 leading-relaxed">
-            {selectedProject.description}
-          </p>
+          <p class="text-dark-500 dark:text-dark-400 mb-6 leading-relaxed">{selectedProject.description}</p>
           {#if selectedProject.specs}
             <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mb-6 p-4 bg-gray-50 dark:bg-dark-700 rounded-xl">
               {#each selectedProject.specs as spec}
                 <div>
-                  <p class="text-xs text-dark-400 dark:text-dark-400 uppercase tracking-wide">{spec.label}</p>
+                  <p class="text-xs text-dark-400 uppercase tracking-wide">{spec.label}</p>
                   <p class="font-semibold text-dark-900 dark:text-white">{spec.value}</p>
                 </div>
               {/each}
             </div>
           {/if}
-          <a href="/request-quote" class="btn-primary w-full justify-center">
-            Get Similar Results
-          </a>
+          <a href="/request-quote" class="btn-primary w-full justify-center">Get Similar Results</a>
         </div>
       </div>
     </div>

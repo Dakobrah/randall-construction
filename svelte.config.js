@@ -14,13 +14,14 @@ const mdsvexOptions = {
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
+  extensions: ['.svelte', '.mdx'],
   preprocess: [vitePreprocess(), mdsvex(mdsvexOptions)],
   kit: {
     adapter: adapter(),
     files: {
       assets: 'static',
       lib: 'src/lib',
-      pages: 'src/routes',
+      routes: 'src/routes',
       params: 'src/params'
     },
     paths: {
