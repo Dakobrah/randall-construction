@@ -1,2 +1,4 @@
 #!/bin/bash
-npm run build && npx wrangler deploy
+set -e
+npm run build
+npx wrangler deploy
