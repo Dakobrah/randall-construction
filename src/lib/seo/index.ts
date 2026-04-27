@@ -18,58 +18,74 @@ export interface JsonLdData {
 // Company info
 export const COMPANY = {
   name: 'Randall Excavation',
-  tagline: 'Excavation & Site Development Experts',
-  phone: '(555) 123-4567',
-  email: 'info@randallexcavation.com',
-  address: '123 Construction Way',
-  city: 'Springfield',
-  state: 'IL',
-  zip: '62701',
+  legalName: 'Randall Construction And Excavation',
+  tagline: 'All Things Land Management and Construction',
+  phone: '(931) 644-6180',
+  phoneRaw: '9316446180',
+  email: 'randallconstruction25@gmail.com',
+  city: 'Rickman',
+  state: 'TN',
+  zip: '38580',
   logo: '/logo.png',
-  url: 'https://www.randallexcavation.com'
+  url: 'https://www.randallexcavation.com',
+  facebook: 'https://www.facebook.com/p/Randall-Construction-And-Excavation-61584781014847/'
 };
+
+// Service area cities (Upper Cumberland, TN)
+export const SERVICE_AREAS = [
+  'Rickman',
+  'Cookeville',
+  'Livingston',
+  'Algood',
+  'Monterey',
+  'Sparta',
+  'Crossville',
+  'Jamestown',
+  'Byrdstown'
+];
 
 // Default SEO for home page
 export const homeSeo: SeoMeta = {
-  title: 'Randall Excavation | Excavation, Grading & Demolition Services',
-  description: 'Professional excavation, grading, and demolition services for residential and commercial projects. Licensed, insured, and trusted by developers. Get a free estimate today.',
+  title: 'Randall Excavation | Land Clearing, Grading & Foundation Prep — Rickman, TN',
+  description: 'Locally owned excavation and land management serving Rickman, Cookeville, Livingston and the Upper Cumberland. Land clearing, dirt work & grading, stump removal, foundation prep. Licensed, insured, free estimates.',
   keywords: [
-    'excavation contractor',
-    'site preparation',
-    'grading and drainage',
-    'demolition services',
-    'commercial excavation',
-    'residential excavation',
-    'lot development'
+    'excavation Rickman TN',
+    'excavation Cookeville TN',
+    'land clearing Upper Cumberland',
+    'dirt work and grading Tennessee',
+    'stump removal Cookeville',
+    'foundation prep Rickman',
+    'brush removal Tennessee',
+    'property management excavation'
   ]
 };
 
 // Service page SEO templates
 export const serviceSeo: Record<string, SeoMeta> = {
-  'residential-excavation': {
-    title: 'Residential Excavation Contractor | Lot Prep & Foundation Dig',
-    description: 'Expert residential excavation services including lot preparation, foundation digging, and basement prep. Licensed contractors with 20+ years experience.',
-    keywords: ['residential excavation contractor', 'lot preparation', 'foundation digging', 'basement excavation']
-  },
-  'commercial-site-development': {
-    title: 'Commercial Site Preparation Company | Developer Services',
-    description: 'Commercial site preparation and development for builders and developers. Phased excavation, grading, and infrastructure prep. Schedule a site walk.',
-    keywords: ['commercial site preparation company', 'commercial lot development', 'developer excavation', 'site development contractors']
-  },
   'foundation-prep': {
-    title: 'Foundation Excavation Near Me | Precision Site Prep',
-    description: 'Professional foundation excavation and site preparation services. Geo-targeted local service with fast turnaround. Call for a free foundation prep quote.',
-    keywords: ['foundation excavation near me', 'foundation prep', 'excavation for foundation', 'local excavation services']
+    title: 'Foundation Preparation | Footer Digging & Site Prep — Rickman, TN',
+    description: 'Foundation preparation and footer digging for new homes and additions throughout the Upper Cumberland. Free estimates — call 931-644-6180.',
+    keywords: ['foundation prep Rickman TN', 'footer digging', 'foundation excavation Cookeville', 'site preparation Tennessee']
   },
-  'grading-drainage': {
-    title: 'Grading & Drainage Contractor | Stormwater Management',
-    description: 'Expert grading and drainage solutions for residential and commercial properties. Soil classification, stormwater compliance, and erosion control.',
-    keywords: ['grading and drainage contractor', 'stormwater management', 'erosion control', 'land grading']
+  'land-clearing-brush-removal': {
+    title: 'Land Clearing & Brush Removal | Lot Clearing — Upper Cumberland TN',
+    description: 'Land clearing, brush removal, and lot prep for new builds, pasture, and land management. Serving Rickman, Cookeville, Livingston and surrounding areas.',
+    keywords: ['land clearing Cookeville TN', 'brush removal Upper Cumberland', 'lot clearing Rickman', 'forestry mulching Tennessee']
   },
-  'demolition-hauling': {
-    title: 'Demolition & Hauling Services | Safe Site Clearance',
-    description: 'Professional demolition and hauling services. Structural demolition, concrete removal, and debris hauling with proper disposal permits.',
-    keywords: ['demolition and hauling services', 'structural demolition', 'concrete removal', 'debris hauling']
+  'dirt-work-grading': {
+    title: 'Dirt Work & Grading | Driveways, Drainage & Pads — Rickman, TN',
+    description: 'Dirt work, grading, gravel driveways, drainage lines, and building pads. Locally owned and operated in Rickman, TN.',
+    keywords: ['dirt work Tennessee', 'grading contractor Cookeville', 'gravel driveway Rickman', 'drainage line install']
+  },
+  'stump-removal': {
+    title: 'Stump Removal & Grinding | Upper Cumberland TN',
+    description: 'Professional stump removal for residential and commercial properties throughout the Upper Cumberland. Call 931-644-6180 for a free quote.',
+    keywords: ['stump removal Cookeville TN', 'stump grinding Rickman', 'tree stump removal Tennessee']
+  },
+  'property-management': {
+    title: 'Property & Land Management Services — Rickman, TN',
+    description: 'Land management, lot maintenance, and ongoing property care across the Upper Cumberland. Licensed and insured.',
+    keywords: ['property management excavation', 'land management Tennessee', 'lot maintenance Cookeville']
   }
 };
 
@@ -79,53 +95,39 @@ export function getLocalBusinessJsonLd(): JsonLdData[] {
     '@context': 'https://schema.org',
     '@type': 'ConstructionBusiness',
     name: COMPANY.name,
+    alternateName: COMPANY.legalName,
     description: COMPANY.tagline,
     url: COMPANY.url,
     telephone: COMPANY.phone,
     email: COMPANY.email,
     address: {
       '@type': 'PostalAddress',
-      streetAddress: COMPANY.address,
       addressLocality: COMPANY.city,
       addressRegion: COMPANY.state,
-      postalCode: COMPANY.zip
+      postalCode: COMPANY.zip,
+      addressCountry: 'US'
     },
     geo: {
       '@type': 'GeoCoordinates',
-      latitude: '39.7817',
-      longitude: '-89.6501'
+      latitude: '36.2487',
+      longitude: '-85.2566'
     },
     areaServed: {
       '@type': 'GeoCircle',
       geoMidpoint: {
         '@type': 'GeoCoordinates',
-        latitude: '39.7817',
-        longitude: '-89.6501'
+        latitude: '36.2487',
+        longitude: '-85.2566'
       },
       geoRadius: '50 miles'
     },
-    priceRange: '$$-$$$',
     openingHoursSpecification: {
       '@type': 'OpeningHoursSpecification',
-      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
-      opens: '06:00',
-      closes: '18:00'
+      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+      opens: '00:00',
+      closes: '23:59'
     },
-    sameAs: [
-      'https://www.facebook.com/randallexcavation',
-      'https://www.linkedin.com/company/randallexcavation',
-      'https://www.instagram.com/randallexcavation'
-    ],
-    hasCredential: [
-      {
-        '@type': 'EducationalOccupationalCredential',
-        name: 'Licensed General Contractor'
-      },
-      {
-        '@type': 'EducationalOccupationalCredential',
-        name: 'OSHA Certified'
-      }
-    ]
+    sameAs: [COMPANY.facebook]
   }];
 }
 
