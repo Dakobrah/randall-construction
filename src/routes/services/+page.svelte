@@ -2,7 +2,7 @@
   import Hero from '$lib/components/Hero.svelte';
   import ServiceCard from '$lib/components/ServiceCard.svelte';
   import CTA from '$lib/components/CTA.svelte';
-  import { getServiceJsonLd } from '$lib/seo';
+  import { getServiceJsonLd, SERVICE_AREAS } from '$lib/seo';
 
   // Data provided by +page.server.ts
   export let data: {
@@ -24,11 +24,11 @@
 
 <Hero
   title="Our Services"
-  subtitle="Complete excavation, grading, demolition, and site development solutions for residential and commercial projects throughout central Illinois."
+  subtitle="Land clearing, dirt work, foundation prep, stump removal, and property management across the Upper Cumberland — Rickman, Cookeville, Livingston, and surrounding towns."
   ctaText="Request a Quote"
   ctaLink="/request-quote"
-  secondaryCtaText="Call (555) 123-4567"
-  secondaryCtaLink="tel:5551234567"
+  secondaryCtaText="Call 931-644-6180"
+  secondaryCtaLink="tel:9316446180"
 />
 
 <!-- Services Grid -->
@@ -91,18 +91,18 @@
           SERVICE AREA
         </span>
         <h2 class="text-3xl md:text-4xl font-heading font-bold text-dark-900 dark:text-white mb-6">
-          Serving Central Illinois
+          Serving the Upper Cumberland
         </h2>
         <p class="text-dark-400 dark:text-dark-300 mb-8 leading-relaxed">
-          Based in Springfield, IL, we serve a 50+ mile radius covering major cities and rural communities throughout central Illinois. Our mobile fleet allows us to respond quickly to emergency work and schedule projects efficiently.
+          Based in Rickman, TN, we work across the Upper Cumberland and the surrounding 50-mile radius. Local roots mean we can respond quickly and stay engaged with your project from start to finish.
         </p>
         <div class="grid grid-cols-2 gap-4 mb-8">
-          {#each ['Springfield', 'Columbus', 'Champaign', 'Peoria', 'Naperville', 'Decatur', 'Urbana', 'Bloomington'] as city}
+          {#each SERVICE_AREAS as city}
             <div class="flex items-center gap-2">
               <svg class="w-5 h-5 text-primary-500" fill="currentColor" viewBox="0 0 20 20">
                 <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
               </svg>
-              <span class="text-dark-600 dark:text-dark-300">{city}, IL</span>
+              <span class="text-dark-600 dark:text-dark-300">{city}, TN</span>
             </div>
           {/each}
         </div>
@@ -117,8 +117,8 @@
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 11a3 3 0 116 0 3 3 0 01-6 0z" />
           </svg>
-          <p class="text-dark-400 dark:text-dark-400 font-semibold">Service Area Map</p>
-          <p class="text-dark-400 dark:text-dark-400 text-sm mt-2">50+ mile radius from Springfield, IL</p>
+          <p class="text-dark-400 dark:text-dark-400 font-semibold">Service Area</p>
+          <p class="text-dark-400 dark:text-dark-400 text-sm mt-2">50-mile radius from Rickman, TN</p>
         </div>
       </div>
     </div>

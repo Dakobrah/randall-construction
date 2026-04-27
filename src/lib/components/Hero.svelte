@@ -1,10 +1,10 @@
 <script lang="ts">
-  export let title: string = 'Professional Excavation & Site Development';
-  export let subtitle: string = 'Trusted by residential and commercial developers for over 20 years. Licensed, insured, and committed to excellence on every project.';
-  export let ctaText: string = 'Get a Free Site Estimate';
+  export let title: string = 'Excavation & Land Management in the Upper Cumberland';
+  export let subtitle: string = 'Locally owned and operated out of Rickman, TN. Licensed and insured. Land clearing, dirt work, foundation prep, stump removal, and property management — done right.';
+  export let ctaText: string = 'Get a Free Estimate';
   export let ctaLink: string = '/request-quote';
-  export let secondaryCtaText: string | undefined = 'View Our Projects';
-  export let secondaryCtaLink: string | undefined = '/projects';
+  export let secondaryCtaText: string | undefined = 'Call 931-644-6180';
+  export let secondaryCtaLink: string | undefined = 'tel:9316446180';
   export let backgroundImage: string | undefined = '/hero-bg.jpg';
   export let overlayColor: string = 'rgba(15, 15, 15, 0.6)';
 </script>
@@ -80,29 +80,30 @@
           </div>
           <div>
             <p class="text-white font-semibold">Licensed & Insured</p>
-            <p class="text-gray-400 text-sm">GC-12345 | OSHA Certified</p>
+            <p class="text-gray-400 text-sm">Residential & commercial</p>
           </div>
         </div>
         <div class="flex items-center gap-3">
           <div class="w-12 h-12 bg-primary-500/20 rounded-lg flex items-center justify-center">
             <svg class="w-6 h-6 text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
             </svg>
           </div>
           <div>
-            <p class="text-white font-semibold">20+ Years</p>
-            <p class="text-gray-400 text-sm">Industry Experience</p>
+            <p class="text-white font-semibold">Rickman, TN</p>
+            <p class="text-gray-400 text-sm">Serving the Upper Cumberland</p>
           </div>
         </div>
         <div class="flex items-center gap-3">
           <div class="w-12 h-12 bg-primary-500/20 rounded-lg flex items-center justify-center">
             <svg class="w-6 h-6 text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
             </svg>
           </div>
           <div>
-            <p class="text-white font-semibold">500+ Projects</p>
-            <p class="text-gray-400 text-sm">Completed Successfully</p>
+            <p class="text-white font-semibold">Free Estimates</p>
+            <p class="text-gray-400 text-sm">Call or text 931-644-6180</p>
           </div>
         </div>
       </div>

@@ -2,7 +2,7 @@ import { COMPANY } from '$lib/seo';
 
 const BASE = COMPANY.url.replace(/\/$/, '');
 
-const staticRoutes = ['/', '/services', '/request-quote', '/projects'];
+const staticRoutes = ['/', '/services', '/service-areas', '/about', '/request-quote'];
 
 function formatUrl(path: string) {
   return `${BASE}${path.startsWith('/') ? '' : '/'}${path}`;
@@ -42,7 +42,7 @@ export async function GET() {
     const modules = import.meta.glob('/src/lib/content/services/*.mdx', { eager: true }) as Record<string, any>;
     serviceSlugs = Object.values(modules).map((m: any) => (m.metadata || m.frontmatter || {}).slug).filter(Boolean);
   } catch (e) {
-    serviceSlugs = ['residential-excavation', 'commercial-site-development', 'foundation-prep', 'grading-drainage', 'demolition-hauling', 'land-clearing'];
+    serviceSlugs = ['foundation-prep', 'land-clearing-brush-removal', 'dirt-work-grading', 'stump-removal', 'property-management'];
   }
 
   const body = buildSitemap(serviceSlugs);

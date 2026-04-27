@@ -1,10 +1,10 @@
 <script lang="ts">
-  export let title: string = 'Ready to Start Your Project?';
-  export let description: string = 'Get a free site estimate from our experienced team. We respond within 24 hours.';
+  export let title: string = 'Ready to Get Started?';
+  export let description: string = 'Call or text for a free, no-pressure estimate.';
   export let ctaText: string = 'Get a Free Estimate';
   export let ctaLink: string = '/request-quote';
-  export let secondaryCtaText: string | undefined = 'Call Us Now';
-  export let secondaryCtaLink: string | undefined = 'tel:5551234567';
+  export let secondaryCtaText: string | undefined = 'Call 931-644-6180';
+  export let secondaryCtaLink: string | undefined = 'tel:9316446180';
   export let variant: 'default' | 'dark' | 'gradient' = 'default';
 </script>
 

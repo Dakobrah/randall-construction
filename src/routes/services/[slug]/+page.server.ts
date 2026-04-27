@@ -1,12 +1,11 @@
 import { error } from '@sveltejs/kit';
 
 const validSlugs = [
-  'residential-excavation',
-  'commercial-site-development',
   'foundation-prep',
-  'grading-drainage',
-  'demolition-hauling',
-  'land-clearing'
+  'land-clearing-brush-removal',
+  'dirt-work-grading',
+  'stump-removal',
+  'property-management'
 ];
 
 export const load = ({ params }) => {

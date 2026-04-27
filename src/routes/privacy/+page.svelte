@@ -12,6 +12,6 @@
     This site may use cookies for analytics. By using this site you consent to our use of cookies.
   </p>
   <p class="text-dark-600 dark:text-dark-300 leading-relaxed">
-    Questions? Contact us at <a href="mailto:info@randallexcavation.com" class="text-primary-500 hover:underline">info@randallexcavation.com</a>.
+    Questions? Contact us at <a href="mailto:randallconstruction25@gmail.com" class="text-primary-500 hover:underline">randallconstruction25@gmail.com</a>.
   </p>
 </section>

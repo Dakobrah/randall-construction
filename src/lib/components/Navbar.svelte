@@ -24,9 +24,8 @@
   const navLinks = [
     { href: '/', label: 'Home' },
     { href: '/services', label: 'Services' },
-    { href: '/projects', label: 'Projects' },
-    { href: '/about', label: 'About' },
-    { href: '/resources/blog', label: 'Resources' }
+    { href: '/service-areas', label: 'Service Areas' },
+    { href: '/about', label: 'About' }
   ];
 </script>
 
@@ -78,12 +77,12 @@
         </button>
 
         <!-- CTA Button (Desktop) -->
-        <a href="/request-quote"
+        <a href="tel:9316446180"
            class="hidden md:inline-flex items-center gap-2 px-5 py-2.5 bg-primary-500 text-white font-semibold rounded-lg hover:bg-primary-600 transition-all shadow-md hover:shadow-lg">
           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
           </svg>
-          (555) 123-4567
+          (931) 644-6180
         </a>
 
         <!-- Mobile Menu Button -->
@@ -121,9 +120,9 @@
              on:click={closeMobileMenu}>
             Get Free Estimate
           </a>
-          <a href="tel:5551234567"
+          <a href="tel:9316446180"
              class="mx-4 px-4 py-3 text-center text-dark-600 dark:text-dark-200 font-medium">
-            (555) 123-4567
+            (931) 644-6180
           </a>
         </div>
       </div>

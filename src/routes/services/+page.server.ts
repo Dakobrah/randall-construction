@@ -21,20 +21,20 @@ export const load = async () => {
   } catch (e) {
     // If glob import isn't available in this environment, use a small static fallback
     services = [
-      { slug: 'residential-excavation', title: 'Residential Excavation', description: 'Expert lot preparation...', icon: 'excavation', link: '/services/residential-excavation', features: [] }
+      { slug: 'foundation-prep', title: 'Foundation Preparation', description: 'Footer digging and foundation prep.', icon: 'excavation', link: '/services/foundation-prep', features: [] }
     ];
   }
 
   const processSteps = [
-    { step: '01', title: 'Consultation', description: 'Free site evaluation and project assessment.' },
-    { step: '02', title: 'Planning & Permits', description: 'Detailed project plan and permit acquisition.' },
-    { step: '03', title: 'Execution', description: 'Professional excavation with modern equipment and experienced operators.' },
-    { step: '04', title: 'Inspection & Closeout', description: 'Inspection-ready site and final grading verification.' }
+    { step: '01', title: 'Call or Text', description: 'Reach us at 931-644-6180 or by email — tell us about the job.' },
+    { step: '02', title: 'Free Estimate', description: 'We come look at the site and give you an honest, no-pressure estimate.' },
+    { step: '03', title: 'Schedule', description: 'Once you\u2019re ready, we get on the calendar and confirm the start date.' },
+    { step: '04', title: 'Get It Done', description: 'Work is finished clean, on time, and to the agreed scope.' }
   ];
 
   const seo = {
-    title: 'Our Services | Randall Excavation - Excavation, Grading & Demolition',
-    description: 'Complete excavation, grading, demolition, and site development services for residential and commercial projects. Licensed, insured, 20+ years experience.',
+    title: 'Our Services | Randall Excavation — Land Clearing, Grading & Foundation Prep',
+    description: 'Land clearing, dirt work and grading, foundation prep, stump removal, and property management. Locally owned in Rickman, TN — serving the Upper Cumberland.',
     canonical: 'https://www.randallexcavation.com/services'
   };
 

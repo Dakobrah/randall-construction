@@ -1,22 +1,21 @@
 <script lang="ts">
   import { theme } from '$lib/stores/theme';
+  import { COMPANY, SERVICE_AREAS } from '$lib/seo';
 
   $: themeValue = $theme;
 
   const footerLinks = {
     services: [
-      { label: 'Residential Excavation', href: '/services/residential-excavation' },
-      { label: 'Commercial Site Development', href: '/services/commercial-site-development' },
+      { label: 'Land Clearing & Brush Removal', href: '/services/land-clearing-brush-removal' },
+      { label: 'Dirt Work & Grading', href: '/services/dirt-work-grading' },
       { label: 'Foundation Preparation', href: '/services/foundation-prep' },
-      { label: 'Grading & Drainage', href: '/services/grading-drainage' },
-      { label: 'Demolition & Hauling', href: '/services/demolition-hauling' }
+      { label: 'Stump Removal', href: '/services/stump-removal' },
+      { label: 'Property & Land Management', href: '/services/property-management' }
     ],
     company: [
       { label: 'About Us', href: '/about' },
-      { label: 'Our Projects', href: '/projects' },
-      { label: 'Blog & Resources', href: '/resources/blog' },
       { label: 'Service Areas', href: '/service-areas' },
-      { label: 'Careers', href: '/careers' }
+      { label: 'Request a Quote', href: '/request-quote' }
     ],
     legal: [
       { label: 'Privacy Policy', href: '/privacy' },
@@ -26,20 +25,10 @@
   };
 
   const socialLinks = [
-    { 
-      label: 'Facebook', 
-      href: 'https://facebook.com/randallexcavation',
+    {
+      label: 'Facebook',
+      href: COMPANY.facebook,
       icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />`
-    },
-    { 
-      label: 'LinkedIn', 
-      href: 'https://linkedin.com/company/randallexcavation',
-      icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z M4 6a2 2 0 100-4 2 2 0 000 4z" />`
-    },
-    { 
-      label: 'Instagram', 
-      href: 'https://instagram.com/randallexcavation',
-      icon: `<rect x="2" y="2" width="20" height="20" rx="5" ry="5" stroke-width="2" fill="none" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z M17.5 6.5h.01" />`
     }
   ];
 </script>
@@ -62,35 +51,35 @@
           </div>
         </a>
         <p class="text-dark-300 mb-6 leading-relaxed">
-          Professional excavation, grading, and demolition services for residential and commercial projects throughout Illinois.
+          {COMPANY.tagline}. Locally owned and operated in Rickman, TN, serving the Upper Cumberland.
         </p>
         <!-- Contact -->
         <div class="space-y-3 mb-6">
-          <a href="tel:5551234567" class="flex items-center gap-3 text-dark-300 hover:text-primary-400 transition-colors">
+          <a href="tel:{COMPANY.phoneRaw}" class="flex items-center gap-3 text-dark-300 hover:text-primary-400 transition-colors">
             <svg class="w-5 h-5 text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
             </svg>
-            (555) 123-4567
+            {COMPANY.phone}
           </a>
-          <a href="mailto:info@randallexcavation.com" class="flex items-center gap-3 text-dark-300 hover:text-primary-400 transition-colors">
-            <svg class="w-5 h-5 text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <a href="mailto:{COMPANY.email}" class="flex items-center gap-3 text-dark-300 hover:text-primary-400 transition-colors break-all">
+            <svg class="w-5 h-5 text-primary-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
             </svg>
-            info@randallexcavation.com
+            {COMPANY.email}
           </a>
           <div class="flex items-center gap-3 text-dark-300">
             <svg class="w-5 h-5 text-primary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
             </svg>
-            123 Construction Way, Springfield, IL 62701
+            {COMPANY.city}, {COMPANY.state} {COMPANY.zip}
           </div>
         </div>
         <!-- Social -->
         <div class="flex gap-3">
           {#each socialLinks as social}
-            <a href={social.href} 
-               target="_blank" 
+            <a href={social.href}
+               target="_blank"
                rel="noopener noreferrer"
                class="w-10 h-10 bg-dark-700 hover:bg-primary-500 rounded-lg flex items-center justify-center transition-colors"
                aria-label={social.label}>
@@ -134,12 +123,10 @@
       <div>
         <h4 class="font-heading font-bold text-white mb-6">Service Areas</h4>
         <ul class="space-y-3 text-dark-300 text-sm">
-          <li>Springfield, IL</li>
-          <li>Columbus, IL</li>
-          <li>Champaign, IL</li>
-          <li>Peoria, IL</li>
-          <li>Naperville, IL</li>
-          <li>And 50+ mile radius</li>
+          {#each SERVICE_AREAS as city}
+            <li>{city}, TN</li>
+          {/each}
+          <li>And the surrounding 50-mile radius</li>
         </ul>
       </div>
     </div>
@@ -150,7 +137,7 @@
     <div class="max-w-7xl mx-auto px-4 md:px-8 lg:px-16 py-6">
       <div class="flex flex-col md:flex-row justify-between items-center gap-4">
         <p class="text-dark-400 text-sm">
-          &copy; {new Date().getFullYear()} Randall Excavation. All rights reserved. | GC-12345
+          &copy; {new Date().getFullYear()} {COMPANY.legalName}. All rights reserved.
         </p>
         <div class="flex gap-6">
           {#each footerLinks.legal as link}
@@ -167,7 +154,7 @@
 <!-- Mobile Bottom CTA Bar -->
 <div class="fixed bottom-0 left-0 right-0 md:hidden z-40 bg-white/95 dark:bg-dark-800/95 backdrop-blur-md border-t border-gray-200 dark:border-dark-600 p-3 safe-area-pb">
   <div class="flex gap-3">
-    <a href="tel:5551234567" class="flex-1 flex items-center justify-center gap-2 py-3 bg-primary-500 text-white font-semibold rounded-lg hover:bg-primary-600 transition-colors" aria-label="Call Randall Excavation">
+    <a href="tel:{COMPANY.phoneRaw}" class="flex-1 flex items-center justify-center gap-2 py-3 bg-primary-500 text-white font-semibold rounded-lg hover:bg-primary-600 transition-colors" aria-label="Call Randall Excavation">
       <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
       </svg>
