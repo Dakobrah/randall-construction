@@ -74,40 +74,48 @@
       </p>
     </div>
 
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-      {#each equipment as item, i}
-        <article class="bg-dark-50 dark:bg-dark-800 rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow animate-on-scroll" style="transition-delay: {i * 100}ms">
-          <div class="aspect-[4/3] overflow-hidden bg-dark-100 dark:bg-dark-700">
-            <img
-              src={item.image}
-              alt={item.name}
-              loading="lazy"
-              decoding="async"
-              width="1600"
-              height="1200"
-              class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
-          </div>
-          <div class="p-6 md:p-8">
-            <h3 class="text-2xl font-heading font-bold text-dark-900 dark:text-white mb-3">
-              {item.name}
-            </h3>
-            <p class="text-dark-500 dark:text-dark-300 mb-5 leading-relaxed">
-              {item.description}
-            </p>
-            <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2">
-              {#each item.uses as use}
-                <li class="flex items-center gap-2 text-sm text-dark-600 dark:text-dark-300">
-                  <svg class="w-4 h-4 text-primary-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
-                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-                  </svg>
-                  {use}
-                </li>
-              {/each}
-            </ul>
-          </div>
-        </article>
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6 mb-10 md:mb-12 animate-on-scroll">
+      {#each equipment as item}
+        <div class="aspect-[4/3] overflow-hidden rounded-2xl bg-dark-100 dark:bg-dark-700 shadow-sm">
+          <img
+            src={item.image}
+            alt={item.name}
+            loading="lazy"
+            decoding="async"
+            width="1600"
+            height="1200"
+            class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+        </div>
       {/each}
     </div>
+
+    <ul class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+      {#each equipment as item, i}
+        <li class="bg-dark-50 dark:bg-dark-800 rounded-xl p-6 md:p-7 shadow-sm animate-on-scroll" style="transition-delay: {i * 100}ms">
+          <div class="flex items-start gap-3 mb-3">
+            <svg class="w-6 h-6 text-primary-500 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+            </svg>
+            <h3 class="text-xl md:text-2xl font-heading font-bold text-dark-900 dark:text-white">
+              {item.name}
+            </h3>
+          </div>
+          <p class="text-dark-500 dark:text-dark-300 mb-4 leading-relaxed">
+            {item.description}
+          </p>
+          <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+            {#each item.uses as use}
+              <li class="flex items-center gap-2 text-sm text-dark-600 dark:text-dark-300">
+                <svg class="w-4 h-4 text-primary-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                {use}
+              </li>
+            {/each}
+          </ul>
+        </li>
+      {/each}
+    </ul>
   </div>
 </section>
 
