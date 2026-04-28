@@ -2,7 +2,7 @@ import { COMPANY } from '$lib/seo';
 
 const BASE = COMPANY.url.replace(/\/$/, '');
 
-const staticRoutes = ['/', '/services', '/service-areas', '/about', '/request-quote'];
+const staticRoutes = ['/', '/services', '/equipment', '/service-areas', '/about', '/request-quote'];
 
 function formatUrl(path: string) {
   return `${BASE}${path.startsWith('/') ? '' : '/'}${path}`;

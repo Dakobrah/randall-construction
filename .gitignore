@@ -1,3 +1,9 @@
 node_modules
 .svelte-kit
 .claude
+
+# Source asset originals (served copies live under static/images/)
+randall-e/
+
+# Local reference docs not for repo
+*.pdf

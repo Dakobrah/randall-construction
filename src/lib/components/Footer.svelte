@@ -14,6 +14,7 @@
     ],
     company: [
       { label: 'About Us', href: '/about' },
+      { label: 'Equipment', href: '/equipment' },
       { label: 'Service Areas', href: '/service-areas' },
       { label: 'Request a Quote', href: '/request-quote' }
     ],
