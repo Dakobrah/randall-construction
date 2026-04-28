@@ -43,7 +43,7 @@
 
     <!-- Features list -->
     {#if features.length}
-      <ul class="space-y-2 mb-6" aria-label="Features list">
+      <ul class="space-y-2" aria-label="Features list">
         {#each features as feature}
           <li class="flex items-center gap-2 text-sm text-dark-500 dark:text-dark-400">
             <svg class="w-4 h-4 text-primary-500 flex-shrink-0" aria-hidden="true" focusable="false" fill="currentColor" viewBox="0 0 20 20">
@@ -54,13 +54,5 @@
         {/each}
       </ul>
     {/if}
-
-    <!-- Link -->
-    <div class="flex items-center gap-2 text-primary-500 font-semibold group-hover:gap-3 transition-all">
-      {linkText}
-      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-      </svg>
-    </div>
   </a>
 </div>
