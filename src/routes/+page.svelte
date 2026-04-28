@@ -26,7 +26,7 @@
       title: 'Foundation Preparation',
       description: 'Footer digging and foundation prep for new homes, additions, garages, and outbuildings.',
       icon: 'excavation',
-      image: '/images/drainage/drainage-1.jpg',
+      image: '/images/dirt-work/dirt-work-3.jpg',
       link: '/services/foundation-prep',
       features: ['Footer Digging', 'Building Pads', 'Grade Control', 'Site Staging']
     },
@@ -42,7 +42,7 @@
       title: 'Property & Land Management',
       description: 'Ongoing property care — driveways, drainage, brush control — for landowners who want their land kept in shape.',
       icon: 'development',
-      image: '/images/dirt-work/dirt-work-3.jpg',
+      image: '/images/drainage/drainage-1.jpg',
       link: '/services/property-management',
       features: ['Lot Maintenance', 'Brush Control', 'Driveway Upkeep', 'Seasonal Service']
     }

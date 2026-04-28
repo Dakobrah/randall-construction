@@ -82,6 +82,7 @@
               src={item.image}
               alt={item.name}
               loading="lazy"
+              decoding="async"
               width="1600"
               height="1200"
               class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
@@ -155,6 +156,7 @@
             src={photo.src}
             alt={photo.alt}
             loading="lazy"
+            decoding="async"
             width="1200"
             height="900"
             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
