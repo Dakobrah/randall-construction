@@ -36,16 +36,14 @@
   <div class="max-w-7xl mx-auto px-4 md:px-8 lg:px-16">
     <div class="flex items-center justify-between h-16 md:h-20">
       <!-- Logo -->
-      <a href="/" class="flex items-center gap-2 group" aria-label="Randall Excavation Home">
-        <div class="w-10 h-10 bg-primary-500 rounded-lg flex items-center justify-center group-hover:bg-primary-600 transition-colors">
-          <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-          </svg>
-        </div>
-        <div class="hidden sm:block">
-          <span class="text-xl font-heading font-bold text-dark-900 dark:text-white">Randall</span>
-          <span class="text-xl font-heading font-bold text-primary-500"> Excavation</span>
-        </div>
+      <a href="/" class="flex items-center gap-3 group" aria-label="Randall Excavation Home">
+        <img
+          src="/logo.jpg"
+          alt="Randall Construction & Excavation"
+          width="160"
+          height="160"
+          class="h-12 md:h-14 w-auto rounded-md bg-white p-1 shadow-sm dark:shadow-none" />
+        <span class="sr-only">Randall Excavation</span>
       </a>
 
       <!-- Desktop Navigation -->

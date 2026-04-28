@@ -5,7 +5,7 @@
   export let ctaLink: string = '/request-quote';
   export let secondaryCtaText: string | undefined = 'Call 931-644-6180';
   export let secondaryCtaLink: string | undefined = 'tel:9316446180';
-  export let backgroundImage: string | undefined = '/hero-bg.jpg';
+  export let backgroundImage: string | undefined = '/images/dirt-work/dirt-work-1.jpg';
   export let overlayColor: string = 'rgba(15, 15, 15, 0.6)';
 </script>
 

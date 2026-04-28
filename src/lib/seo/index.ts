@@ -26,7 +26,7 @@ export const COMPANY = {
   city: 'Rickman',
   state: 'TN',
   zip: '38580',
-  logo: '/logo.png',
+  logo: '/logo.jpg',
   url: 'https://www.randallexcavation.com',
   facebook: 'https://www.facebook.com/p/Randall-Construction-And-Excavation-61584781014847/'
 };

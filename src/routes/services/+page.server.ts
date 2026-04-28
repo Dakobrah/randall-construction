@@ -14,6 +14,7 @@ export const load = async () => {
         title: meta.title || 'Service',
         description: meta.description || '',
         icon: meta.icon || 'development',
+        image: meta.image || '',
         link: `/services/${slug}`,
         features: meta.features || []
       };

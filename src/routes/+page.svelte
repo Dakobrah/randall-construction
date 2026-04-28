@@ -10,6 +10,7 @@
       title: 'Land Clearing & Brush Removal',
       description: 'Lot clearing, brush removal, and tree work to make your land buildable, usable, or just easier to maintain.',
       icon: 'development',
+      image: '/images/tree-clearing/tree-clearing-1.jpg',
       link: '/services/land-clearing-brush-removal',
       features: ['Lot Clearing', 'Brush Removal', 'Tree Removal', 'Fence-line Clearing']
     },
@@ -17,6 +18,7 @@
       title: 'Dirt Work & Grading',
       description: 'Driveways, building pads, drainage lines, and yard grading. We get the dirt where it needs to go.',
       icon: 'grading',
+      image: '/images/dirt-work/dirt-work-1.jpg',
       link: '/services/dirt-work-grading',
       features: ['Gravel Driveways', 'Building Pads', 'Drainage Lines', 'Yard Grading']
     },
@@ -24,6 +26,7 @@
       title: 'Foundation Preparation',
       description: 'Footer digging and foundation prep for new homes, additions, garages, and outbuildings.',
       icon: 'excavation',
+      image: '/images/drainage/drainage-1.jpg',
       link: '/services/foundation-prep',
       features: ['Footer Digging', 'Building Pads', 'Grade Control', 'Site Staging']
     },
@@ -31,6 +34,7 @@
       title: 'Stump Removal',
       description: 'Clean stump removal so you can re-grade, replant, or build without surprises.',
       icon: 'demolition',
+      image: '/images/stump-removal/stump-removal-1.jpg',
       link: '/services/stump-removal',
       features: ['Single Stumps', 'Whole-lot Cleanup', 'Root Ball Extraction', 'Free Estimates']
     },
@@ -38,6 +42,7 @@
       title: 'Property & Land Management',
       description: 'Ongoing property care — driveways, drainage, brush control — for landowners who want their land kept in shape.',
       icon: 'development',
+      image: '/images/dirt-work/dirt-work-3.jpg',
       link: '/services/property-management',
       features: ['Lot Maintenance', 'Brush Control', 'Driveway Upkeep', 'Seasonal Service']
     }
@@ -139,6 +144,43 @@
           </p>
         </div>
       {/each}
+    </div>
+  </div>
+</section>
+
+<!-- Recent Work Gallery -->
+<section class="py-16 md:py-24 bg-white dark:bg-dark-900">
+  <div class="max-w-7xl mx-auto px-4 md:px-8 lg:px-16">
+    <div class="text-center mb-12 animate-on-scroll">
+      <span class="inline-block px-4 py-1.5 bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 text-sm font-semibold rounded-full mb-4">
+        RECENT WORK
+      </span>
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-dark-900 dark:text-white mb-4">
+        Real Jobs, Real Results
+      </h2>
+      <p class="text-dark-400 dark:text-dark-300 max-w-2xl mx-auto">
+        A look at recent projects across the Upper Cumberland — dirt work, drainage, land clearing, and stump removal.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 md:gap-4">
+      {#each [
+        { src: '/images/dirt-work/dirt-work-1.jpg', alt: 'Dirt work and grading' },
+        { src: '/images/tree-clearing/tree-clearing-1.jpg', alt: 'Land clearing project' },
+        { src: '/images/drainage/drainage-1.jpg', alt: 'Drainage line install' },
+        { src: '/images/dirt-work/dirt-work-3.jpg', alt: 'Building pad work' },
+        { src: '/images/tree-clearing/tree-clearing-4.jpg', alt: 'Cleared lot' },
+        { src: '/images/stump-removal/stump-removal-1.jpg', alt: 'Stump removal' }
+      ] as photo, i}
+        <a href="/equipment" class="group relative overflow-hidden rounded-xl aspect-square bg-dark-100 dark:bg-dark-800 animate-on-scroll" style="transition-delay: {i * 60}ms" aria-label="See more recent work">
+          <img src={photo.src} alt={photo.alt} loading="lazy" width="600" height="600" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+          <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors"></div>
+        </a>
+      {/each}
+    </div>
+
+    <div class="text-center mt-10 animate-on-scroll">
+      <a href="/equipment" class="btn-secondary">See Equipment & More Photos</a>
     </div>
   </div>
 </section>

@@ -8,6 +8,16 @@
     <span class="inline-block px-4 py-1.5 bg-primary-100 dark:bg-primary-900/30 text-primary-600 dark:text-primary-400 text-sm font-semibold rounded-full mb-6">Our Story</span>
     <h1 class="text-4xl md:text-5xl font-heading font-bold text-dark-900 dark:text-white mb-6">About Randall Excavation</h1>
   </div>
+
+  <div class="mb-10 flex justify-center">
+    <img
+      src="/logo-2.jpg"
+      alt="Randall Construction and Excavation logo"
+      loading="lazy"
+      width="600"
+      height="600"
+      class="w-full max-w-md h-auto rounded-2xl shadow-md" />
+  </div>
   <div class="text-lg text-dark-500 dark:text-dark-300 leading-relaxed space-y-5">
     <p>
       Randall Construction and Excavation is a locally owned and operated business based in Rickman, Tennessee. We handle <strong>all things land management and construction</strong> across the Upper Cumberland — from clearing a fresh lot for a new home to digging clean footers, laying gravel driveways, removing stumps, and keeping properties maintained year-round.

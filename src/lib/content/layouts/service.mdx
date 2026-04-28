@@ -4,6 +4,18 @@
 </script>
 
 <article class="max-w-4xl mx-auto py-12 px-4 md:px-8">
+  {#if metadata.image}
+    <div class="mb-8 rounded-2xl overflow-hidden shadow-md aspect-[16/9] bg-dark-100 dark:bg-dark-800">
+      <img
+        src={metadata.image}
+        alt={metadata.title}
+        loading="eager"
+        width="1600"
+        height="900"
+        class="w-full h-full object-cover" />
+    </div>
+  {/if}
+
   <header class="mb-8">
     <p class="text-sm text-primary-600 dark:text-primary-400 font-semibold uppercase tracking-wide mb-2">Service</p>
     <h1 class="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-dark-900 dark:text-white mb-4">{metadata.title}</h1>
