@@ -74,22 +74,20 @@
       </p>
     </div>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6 mb-10 md:mb-12 animate-on-scroll">
-      {#each equipment as item}
-        <div class="aspect-[4/3] overflow-hidden rounded-2xl bg-dark-100 dark:bg-dark-700 shadow-sm">
-          <img
-            src={item.image}
-            alt={item.name}
-            loading="lazy"
-            decoding="async"
-            width="1600"
-            height="1200"
-            class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
-        </div>
-      {/each}
+    <div class="flex justify-center mb-10 md:mb-12 animate-on-scroll">
+      <div class="w-full max-w-2xl aspect-[4/3] overflow-hidden rounded-2xl bg-dark-100 dark:bg-dark-700 shadow-sm">
+        <img
+          src="/images/equipment/equipment-1.jpg"
+          alt="Randall Excavation equipment on site"
+          loading="lazy"
+          decoding="async"
+          width="1600"
+          height="1200"
+          class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+      </div>
     </div>
 
-    <ul class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+    <ul class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 max-w-5xl mx-auto">
       {#each equipment as item, i}
         <li class="bg-dark-50 dark:bg-dark-800 rounded-xl p-6 md:p-7 shadow-sm animate-on-scroll" style="transition-delay: {i * 100}ms">
           <div class="flex items-start gap-3 mb-3">
