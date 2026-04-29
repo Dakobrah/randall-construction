@@ -132,7 +132,7 @@
             Need a bigger machine? We rent in.
           </h2>
           <p class="text-dark-500 dark:text-dark-300 leading-relaxed">
-            Some jobs call for more than what we keep on the trailer — bulldozers, full-size excavators, dump trucks, forestry mulchers, or specialty attachments. When that\u2019s the case, we bring in the right additional equipment by rental so the work gets done efficiently without you having to source it. Just let us know what you\u2019re trying to accomplish and we\u2019ll line up the gear that fits.
+            Some jobs call for more than what we keep on the trailer — bulldozers, full-size excavators, dump trucks, forestry mulchers, or specialty attachments. When that’s the case, we bring in the right additional equipment by rental so the work gets done efficiently without you having to source it. Just let us know what you’re trying to accomplish and we’ll line up the gear that fits.
           </p>
         </div>
       </div>
@@ -179,7 +179,7 @@
 
 <CTA
   title="Have a Job in Mind?"
-  description="Tell us what you\u2019re working on. If our fleet can\u2019t handle it alone, we\u2019ll bring in the right equipment to finish the job."
+  description="Tell us what you’re working on. If our fleet can’t handle it alone, we’ll bring in the right equipment to finish the job."
   ctaText="Request a Free Estimate"
   ctaLink="/request-quote"
   secondaryCtaText="Call 931-644-6180"
